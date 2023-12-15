@@ -14,7 +14,15 @@ export default {
             <h4>{{ originalTitle }}</h4>
         </div>
         <div class="language">
-            <p>{{ language }}</p>
+            <p v-if="language === 'it'">
+                <img src="../assets/img/itflag.png" alt="It Flag">
+            </p>
+            <p v-else-if="language === 'en'">
+                <img src="../assets/img/ukflag.png" alt="UK Flag">
+            </p>
+            <p else>
+                {{ language }}
+            </p>
         </div>
         <div class="vote">
             <p>{{ vote }}</p>
@@ -22,4 +30,5 @@ export default {
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
