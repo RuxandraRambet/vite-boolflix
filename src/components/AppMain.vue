@@ -17,6 +17,7 @@ export default {
 <template>
   <main>
     <ul>
+      <h2>Movies</h2>
       <!-- movie list -->
       <li v-for="movie in store.movies">
         <!-- movie card -->
@@ -24,6 +25,16 @@ export default {
           :vote="movie.vote_average" />
       </li>
       <!-- /movie list -->
+    </ul>
+
+    <ul>
+      <h2>TV Series</h2>
+      <li v-for="serie in store.series">
+        <!-- movie card -->
+        <Card :title="serie.name" :originalTitle="serie.originale_name" :language="serie.original_language"
+          :vote="serie.vote_average" />
+      </li>
+
     </ul>
   </main>
 </template>

@@ -28,6 +28,17 @@ export default {
         }).then((response) => {
           this.store.movies = response.data.results;
         });
+
+        // ricerca series
+        axios.get(this.store.apiConfig.apiSeriesUrl, {
+          params: {
+            api_key: store.apiConfig.apiKey,
+            query: store.searchKey,
+            language: store.searchLanguage,
+          }
+        }).then((response) => {
+          this.store.series = response.data.results;
+        });
       },
     },
 
