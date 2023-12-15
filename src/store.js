@@ -1,7 +1,12 @@
 import { reactive } from "vue";
-
+import apiConfig from './apiConfig.js';
 export const store = reactive({
+    // valore vuoto per ricerca con v-model
     searchKey: '',
+    // valore ricerca lingua
+    searchLanguage : 'it-IT',
+    // array vuoti per le chiamate api
     movies: [],
-    apiBaseUrl: 'https://api.themoviedb.org/3/search/movie?api_key=eed6b21a8af8cb0371253464e6991f9f'
+    series: [],
+    apiConfig,
 })
