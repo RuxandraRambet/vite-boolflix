@@ -1,5 +1,6 @@
 <script>
 import Card from './Card.vue';
+// import store
 import { store } from '../store.js'
 export default {
   name: 'AppMain',
@@ -16,26 +17,31 @@ export default {
 
 <template>
   <main>
-    <ul>
+    <!-- Movies area-->
+    <div v-if="store.movies.length">
       <h2>Movies</h2>
-      <!-- movie list -->
-      <li v-for="movie in store.movies">
-        <!-- movie card -->
-        <Card :title="movie.title" :originalTitle="movie.originale_title" :language="movie.original_language"
-          :vote="movie.vote_average" />
-      </li>
-      <!-- /movie list -->
-    </ul>
+      <ul>
+        <li v-for="movie in store.movies">
+          <!-- movie card -->
+          <Card :poster="store.apiConfig.urlMoviePoster + movie.poster_path" :title="movie.title"
+            :originalTitle="movie.originale_title" :language="movie.original_language" :vote="movie.vote_average" />
+        </li>
+      </ul>
+    </div>
+    <!-- Movies area-->
 
-    <ul>
+    <!-- Series area -->
+    <div v-if="store.series.length">
       <h2>TV Series</h2>
-      <li v-for="serie in store.series">
-        <!-- movie card -->
-        <Card :title="serie.name" :originalTitle="serie.originale_name" :language="serie.original_language"
-          :vote="serie.vote_average" />
-      </li>
-
-    </ul>
+      <ul>
+        <li v-for="serie in store.series">
+          <!-- serie card -->
+          <Card :poster="store.apiConfig.urlMoviePoster + serie.poster_path" :title="serie.name"
+            :originalTitle="serie.originale_name" :language="serie.original_language" :vote="serie.vote_average" />
+        </li>
+      </ul>
+    </div>
+    <!-- /Series area -->
   </main>
 </template>
 

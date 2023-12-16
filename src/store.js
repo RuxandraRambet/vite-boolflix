@@ -8,5 +8,6 @@ export const store = reactive({
     // array vuoti per le chiamate api
     movies: [],
     series: [],
+    // apiConfig che contiene apikey e url
     apiConfig,
 })
