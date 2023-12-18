@@ -30,7 +30,7 @@ export default {
             </div>
             <div class="vote">
                 <p>
-                    <font-awesome-icon icon="fa-solid fa-star" v-for="n in vote"/>
+                    <font-awesome-icon icon="fa-solid fa-star" v-for="n in vote" />
                     <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5 - vote" />
                 </p>
             </div>

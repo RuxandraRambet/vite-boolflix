@@ -13,8 +13,8 @@ export default {
     };
   },
   methods: {
-    getVote(vote){
-      return  Math.ceil(vote / 2);;
+    getVote(vote) {
+      return Math.ceil(vote / 2);;
     },
   },
 }
@@ -29,7 +29,8 @@ export default {
         <li v-for="movie in store.movies">
           <!-- movie card -->
           <Card :poster="store.apiConfig.urlMoviePoster + movie.poster_path" :title="movie.title"
-            :originalTitle="movie.originale_title" :language="movie.original_language" :vote="getVote(movie.vote_average)" />
+            :originalTitle="movie.originale_title" :language="movie.original_language"
+            :vote="getVote(movie.vote_average)" />
         </li>
       </ul>
     </div>
@@ -42,7 +43,8 @@ export default {
         <li v-for="serie in store.series">
           <!-- serie card -->
           <Card :poster="store.apiConfig.urlMoviePoster + serie.poster_path" :title="serie.name"
-            :originalTitle="serie.originale_name" :language="serie.original_language" :vote="getVote(serie.vote_average)" />
+            :originalTitle="serie.originale_name" :language="serie.original_language"
+            :vote="getVote(serie.vote_average)" />
         </li>
       </ul>
     </div>

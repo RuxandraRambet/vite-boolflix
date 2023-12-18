@@ -2,3 +2,10 @@
 @use './partials/variables' as *;
 // Bootstrap
 @import "bootstrap/scss/bootstrap";
+
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
