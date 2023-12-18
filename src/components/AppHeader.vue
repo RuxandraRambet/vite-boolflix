@@ -28,7 +28,7 @@ export default {
         }
       }).then((response) => {
         this.store.movies = response.data.results;
-      }).catch((error) => {
+      }).catch((error) => { //gestione messaggio errore
         console.log(error.message);
         this.errorMessage = error.message;
         this.store.movies = [];
@@ -43,7 +43,7 @@ export default {
         }
       }).then((response) => {
         this.store.series = response.data.results;
-      }).catch((error) => {
+      }).catch((error) => { //gestione messaggio errore
         console.log(error.message);
         this.errorMessage = error.message;
         this.store.series = [];
@@ -58,10 +58,15 @@ export default {
 <template>
   <header>
     <nav class="container-fluid d-flex justify-content-between p-4">
+      <!-- Logo -->
       <div class="logo">
         <img src="../assets/img/logo.png" alt="Boolflix Logo">
       </div>
+      <!-- /Logo -->
+
+      <!-- Search area component-->
       <SearchComponent @search="search" />
+      <!-- /Search area component-->
     </nav>
   </header>
 </template>

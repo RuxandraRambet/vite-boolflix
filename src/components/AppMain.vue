@@ -34,7 +34,7 @@ export default {
         </li>
       </ul>
     </div>
-    <!-- Movies area-->
+    <!-- /Movies area-->
 
     <!-- Series area -->
     <div v-if="store.series.length" class="container">
