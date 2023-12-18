@@ -59,9 +59,19 @@ export default {
   <header>
     <nav class="container-fluid d-flex justify-content-between p-4">
       <!-- Logo -->
-      <div class="logo">
-        <img src="../assets/img/logo.png" alt="Boolflix Logo">
+      <div class="left-side d-flex align-items-center">
+        <div class="logo">
+          <img src="../assets/img/logo.png" alt="Boolflix Logo">
+        </div>
+        <ul class="d-flex pt-2 gap-2">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">Tv Series</a></li>
+          <li><a href="#">Original</a></li>
+          <li><a href="#">New</a></li>
+        </ul>
       </div>
+
       <!-- /Logo -->
 
       <!-- Search area component-->
@@ -85,5 +95,10 @@ header {
     width: 100%;
     display: block;
   }
+}
+a:hover {
+  background-color: rgb(157, 34, 34);
+  color: #f1f1f1;
+  padding: 5px;
 }
 </style>
