@@ -13,6 +13,7 @@ export default {
     data(){
       return {
         store,
+        errorMessage: '',
       }
     },
     // metodo per fare la chiamata api
@@ -27,6 +28,10 @@ export default {
           }
         }).then((response) => {
           this.store.movies = response.data.results;
+        }).catch((error) => {
+          console.log(error.message);
+          this.errorMessage = error.message;
+          this.store.movies = []; 
         });
 
         // ricerca series
@@ -38,7 +43,11 @@ export default {
           }
         }).then((response) => {
           this.store.series = response.data.results;
-        });
+        }).catch((error) => {
+          console.log(error.message);
+          this.errorMessage = error.message;
+          this.store.series = [];
+        })
       },
     },
 
