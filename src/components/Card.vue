@@ -8,19 +8,15 @@ export default {
 <template>
     <!-- flip card container per girare le card -->
     <div class="flip-card">
-        <div class="flip-card-inner">
+        <div class="flip-card-inner text-start">
             <!-- poster - front card -->
             <div class="flip-card-front">
                 <img :src="poster" :alt="title" class="img-fluid h-100 w-100 object-fit-cover">
             </div>
             <!-- info cards - back of the card-->
             <div class="flip-card-back p-3">
-                <div class="title">
-                    <h3 class="fs-6 text-secondary">{{ title }}</h3>
-                </div>
-                <div class="original-title">
-                    <h3 class="fs-6 text-secondary">{{ originalTitle }}</h3>
-                </div>
+                <h3 class="fs-6 text-secondary">Title: {{ title }}</h3>
+                <h3 v-if="title !== originalTitle" class="fs-6 text-secondary">Original Title: {{ originalTitle }}</h3>
                 <div class="language text-secondary">
                     <p v-if="language === 'it'">
                         <img src="../assets/img/itflag.png" alt="It Flag">
@@ -49,6 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/scss/partials/variables' as *;
+
 // cards flip
 .flip-card {
     background-color: transparent;
@@ -85,10 +82,12 @@ export default {
     transform: rotateY(180deg);
     overflow-y: auto;
 }
+
 // language flag
 .language img {
     width: 25px;
 }
+
 // card scrollbar
 ::-webkit-scrollbar {
     width: 5px;

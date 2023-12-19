@@ -29,7 +29,7 @@ export default {
         <li v-for="movie in store.movies">
           <!-- movie card -->
           <Card :poster="store.apiConfig.urlMoviePoster + movie.poster_path" :title="movie.title"
-            :originalTitle="movie.originale_title" :language="movie.original_language"
+            :originalTitle="movie.original_title" :language="movie.original_language"
             :vote="getVote(movie.vote_average)" :overview="movie.overview"/>
         </li>
       </ul>
@@ -43,7 +43,7 @@ export default {
         <li v-for="serie in store.series">
           <!-- serie card -->
           <Card :poster="store.apiConfig.urlMoviePoster + serie.poster_path" :title="serie.name"
-            :originalTitle="serie.originale_name" :language="serie.original_language"
+            :originalTitle="serie.original_name" :language="serie.original_language"
             :vote="getVote(serie.vote_average)" :overview="serie.overview"/>
         </li>
       </ul>
